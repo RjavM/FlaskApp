@@ -9,7 +9,7 @@ app = Flask(__name__)
 USERS_FILE = "database/data.csv"
 
 # Replace with your OpenAI API key
-# openai.api_key = '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'
+# openai.api_key = 
 
 # Store chat messages in memory
 chat_history = {}
