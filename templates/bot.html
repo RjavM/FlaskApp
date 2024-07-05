@@ -1,0 +1,68 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Text Box Example</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bot.css') }}">
+</head>
+<body>
+    <form>
+        <label for="input">Enter Information:</label>
+        <input type="text" id="input" name="input">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="output"></div>
+
+    <script>
+        const form = document.querySelector('form');
+        const output = document.querySelector('#output');
+
+        form.addEventListener('submit', (event) => {
+            chat();
+            event.preventDefault();
+            const inputValue = document.querySelector('#input').value;
+            output.textContent = `Response: ${messages}`;
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bot.css') }}">
+
+</head>
+
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Chat with GPT</h1>
+        </div>
+        <div class="chat-box">
+            {% for message in messages %}
+            <div class="chat-message {{ message.sender }}">
+                {{ message.text }}
+            </div>
+            {% endfor %}
+        </div>
+        <form action="/chat" method="POST">
+            <input type="text" name="message" placeholder="Type a message..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <div class="logout-container">
+        <form action="/logout" method="GET">
+            <button class="logout-button">Logout</button>
+        </form>
+    </div>
+</body>
+
+
+</html>
+</div>

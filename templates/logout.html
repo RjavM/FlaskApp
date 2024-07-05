@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/logout.css') }}">
+<div class="logout-container">
+    <center>
+        <h1>Logout</h1>
+        <p>{{ message.text }}, are you sure you want to logout?</p>
+        <form action="/logout" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+    </center>
+</div>
